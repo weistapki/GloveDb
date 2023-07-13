@@ -1,8 +1,9 @@
-package com.example.glovo.service;
+package com.example.glovedb.service;
 
-import com.example.glovo.dto.ProductDto;
-import com.example.glovo.entity.Product;
-import com.example.glovo.repository.ProductRepository;
+
+import com.example.glovedb.dto.ProductDto;
+import com.example.glovedb.entity.Product;
+import com.example.glovedb.repository.ProductRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -11,7 +12,7 @@ import org.springframework.stereotype.Service;
 public class ProductService {
     private final ProductRepository productRepository;
 
-    public ProductDto addToOrder(ProductDto productDto,int orderId){
+    public ProductDto addToOrder(ProductDto productDto, int orderId){
         Product product = Product.builder()
                 .cost(productDto.getCost())
                 .name(productDto.getName())

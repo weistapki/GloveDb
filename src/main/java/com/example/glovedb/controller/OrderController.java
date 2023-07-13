@@ -1,10 +1,10 @@
-package com.example.glovo.controller;
+package com.example.glovedb.controller;
 
-import com.example.glovo.dto.OrderDto;
-import com.example.glovo.dto.ProductDto;
-import com.example.glovo.entity.Order;
-import com.example.glovo.service.OrderService;
-import com.example.glovo.service.ProductService;
+
+import com.example.glovedb.dto.OrderDto;
+import com.example.glovedb.dto.ProductDto;
+import com.example.glovedb.service.OrderService;
+import com.example.glovedb.service.ProductService;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
@@ -17,7 +17,7 @@ public class OrderController {
     private final ProductService productService;
     @GetMapping("/{id}")
     public OrderDto get(@PathVariable int id){
-        return orderService.get(id);
+        return orderService.getById(id);
     }
     @GetMapping
     public List<OrderDto> getAll(){
@@ -28,8 +28,7 @@ public class OrderController {
         return orderService.save(order);
     }
     @PostMapping("/{id}/product")
-    public ProductDto add(@PathVariable int id,@RequestBody ProductDto order){
-        // TODO: 30.06.2023 add service
+    public ProductDto add(@PathVariable int id, @RequestBody ProductDto order){
         return productService.addToOrder(order,id);
     }
 }

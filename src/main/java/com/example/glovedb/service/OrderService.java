@@ -1,19 +1,18 @@
-package com.example.glovo.service;
+package com.example.glovedb.service;
 
-import com.example.glovo.converter.OrderConverter;
-import com.example.glovo.dto.OrderDto;
-import com.example.glovo.entity.Order;
-import com.example.glovo.entity.Product;
-import com.example.glovo.repository.OrderRepository;
-import com.example.glovo.repository.ProductRepository;
+
+import com.example.glovedb.converter.OrderConverter;
+import com.example.glovedb.dto.OrderDto;
+import com.example.glovedb.entity.Order;
+import com.example.glovedb.entity.Product;
+import com.example.glovedb.repository.OrderRepository;
+import com.example.glovedb.repository.ProductRepository;
 import lombok.AllArgsConstructor;
-import lombok.Data;
 import org.springframework.stereotype.Service;
 
 import java.sql.Date;
 import java.time.LocalDate;
 import java.util.List;
-import java.util.Optional;
 
 @Service
 @AllArgsConstructor
@@ -21,7 +20,7 @@ public class OrderService {
     private final OrderRepository orderRepository;
     private final ProductRepository productRepository;
 
-    public OrderDto get(int id){
+    public OrderDto getById(int id){
        return orderRepository.findById(id)
                .map(order -> OrderConverter.toOrderDto(order,productRepository.findAllByOrderId(id)))
                .orElseThrow();

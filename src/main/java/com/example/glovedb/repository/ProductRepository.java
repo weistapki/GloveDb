@@ -1,6 +1,8 @@
-package com.example.glovo.repository;
+package com.example.glovedb.repository;
 
-import com.example.glovo.entity.Product;
+
+
+import com.example.glovedb.entity.Product;
 import org.springframework.data.repository.CrudRepository;
 
 import java.util.List;
