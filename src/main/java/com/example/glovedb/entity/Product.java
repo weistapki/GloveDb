@@ -1,9 +1,10 @@
-package com.example.glovo.entity;
+package com.example.glovedb.entity;
 
 import lombok.Builder;
 import lombok.Data;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.relational.core.mapping.Table;
+
 
 @Table("products")
 @Data

@@ -1,4 +1,4 @@
-package com.example.glovo.dto;
+package com.example.glovedb.dto;
 
 import lombok.Builder;
 import lombok.Data;
